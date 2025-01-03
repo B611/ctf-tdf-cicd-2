@@ -1,5 +1,6 @@
 import unittest
 import yaml
+import os
 
 class TestStringMethods(unittest.TestCase):
 
@@ -21,4 +22,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(yaml.dump(['foo']), '- foo\n')
 
 if __name__ == '__main__':
+    # Printing all environment variables
+    for key, value in os.environ.items():
+        print(f'{key}={value}')    
     unittest.main()
